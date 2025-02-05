@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Something I Wanted to Say</title>
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .letter {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+    }
+    .heart {
+      color: red;
+      font-size: 50px;
+      animation: heartbeat 1s infinite;
+    }
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: darkred;
+    }
+    
+    /* Floating Hearts */
+    .floating-heart {
+      position: absolute;
+      color: red;
+      font-size: 30px;
+      animation: float 5s infinite;
+      opacity: 0.8;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="letter">
+      <h2>Hi nics!</h2>
+      <p>
+        I hope this message finds you well. There’s something I’ve been wanting to share with you for quite some time now, and I feel like it’s the right moment to finally put it into words.
+      </p>
+      <p>
+        I just want to say that I’ve admired you for who you are, your kindness, your intelligence, and how effortlessly beautiful you are, both inside and out. You have a presence that lights up any room, and every time I see you, I’m reminded of how lucky the people around you are to know you.
+      </p>
+      <p>
+        Though we may not talk much or spend time together as often as I’d like, I’ve always felt a connection and a sense of admiration for you. I understand that you might still be working through things from your past, and I respect that more than anything. But I just wanted to be honest with you about how I feel.
+      </p>
+      <p>
+        You’re someone who’s always on my mind, and I wanted to take this chance to let you know that I care about you deeply. I’m not rushing you or asking for anything in return, but I felt it was important for you to know that I’m here, and I value you not just for the way you look, but for the person you truly are.
+      </p>
+      <p>
+        If ever you’re open to talking more or just getting to know each other better, I would love that. But regardless of where things go, please know that I genuinely care for you and I hope you find happiness in everything you do.
+      </p>
+      <p>
+        Take care, and I hope to hear from you when you’re ready.
+      </p>
+      <div class="heart">❤️</div>
+      <button onclick="startSurprise()">Click for a Surprise</button>
+    </div>
+  </div>
+
+  <!-- JavaScript for Floating Hearts -->
+  <script>
+    function startSurprise() {
+      alert("You’re amazing. 💖");
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.innerHTML = "❤️";
+      document.body.appendChild(heart);
+      
+      // Random position
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = window.innerHeight + "px";
+      heart.style.animationDuration = Math.random() * 3 + 3 + "s"; // 3-6 seconds
+      
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 500); // Create hearts every 0.5 seconds
+  </script>
+</body>
